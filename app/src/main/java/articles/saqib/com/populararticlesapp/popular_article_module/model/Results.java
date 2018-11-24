@@ -45,25 +45,35 @@ public class Results implements Parcelable{
     private String source;
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private String id;
     @SerializedName("asset_id")
     @Expose
-    private Integer assetId;
+    private String assetId;
     @SerializedName("views")
     @Expose
     private Integer views;
     @SerializedName("des_facet")
     @Expose
-    private List<String> desFacet = null;
+    private Object desFacet = null;
     @SerializedName("org_facet")
     @Expose
-    private List<String> orgFacet = null;
+    private Object orgFacet = null;
     @SerializedName("per_facet")
     @Expose
-    private List<String> perFacet = null;
+    private Object perFacet = null;
+
+    public Object getGeoFacet() {
+        return geoFacet;
+    }
+
+    public void setGeoFacet(Object geoFacet) {
+        this.geoFacet = geoFacet;
+    }
+
     @SerializedName("geo_facet")
     @Expose
-    private String geoFacet;
+    private Object geoFacet;
+
     @SerializedName("media")
     @Expose
     private List<Media> media = null;
@@ -96,13 +106,13 @@ public class Results implements Parcelable{
         this._abstract = ((String) in.readValue((String.class.getClassLoader())));
         this.publishedDate = ((String) in.readValue((String.class.getClassLoader())));
         this.source = ((String) in.readValue((String.class.getClassLoader())));
-        this.id = ((Integer) in.readValue((Integer.class.getClassLoader())));
-        this.assetId = ((Integer) in.readValue((Integer.class.getClassLoader())));
+        this.id = ((String) in.readValue((String.class.getClassLoader())));
+        this.assetId = ((String) in.readValue((String.class.getClassLoader())));
         this.views = ((Integer) in.readValue((Integer.class.getClassLoader())));
-        in.readList(this.desFacet, (java.lang.String.class.getClassLoader()));
-        in.readList(this.orgFacet, (java.lang.String.class.getClassLoader()));
-        in.readList(this.perFacet, (java.lang.String.class.getClassLoader()));
-        this.geoFacet = ((String) in.readValue((String.class.getClassLoader())));
+        this.desFacet = ((Object) in.readValue((Object.class.getClassLoader())));
+        this.orgFacet= ((Object) in.readValue((Object.class.getClassLoader())));
+        this.perFacet = ((Object) in.readValue((Object.class.getClassLoader())));
+        this.geoFacet = ((Object) in.readValue((String.class.getClassLoader())));
         in.readList(this.media, (Media.class.getClassLoader()));
     }
 
@@ -189,19 +199,19 @@ public class Results implements Parcelable{
         this.source = source;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Integer getAssetId() {
+    public String getAssetId() {
         return assetId;
     }
 
-    public void setAssetId(Integer assetId) {
+    public void setAssetId(String assetId) {
         this.assetId = assetId;
     }
 
@@ -213,37 +223,32 @@ public class Results implements Parcelable{
         this.views = views;
     }
 
-    public List<String> getDesFacet() {
+
+    public Object getDesFacet() {
         return desFacet;
     }
 
-    public void setDesFacet(List<String> desFacet) {
+    public void setDesFacet(Object desFacet) {
         this.desFacet = desFacet;
     }
 
-    public List<String> getOrgFacet() {
+    public Object getOrgFacet() {
         return orgFacet;
     }
 
-    public void setOrgFacet(List<String> orgFacet) {
+    public void setOrgFacet(Object orgFacet) {
         this.orgFacet = orgFacet;
     }
 
-    public List<String> getPerFacet() {
+    public Object getPerFacet() {
         return perFacet;
     }
 
-    public void setPerFacet(List<String> perFacet) {
+    public void setPerFacet(Object perFacet) {
         this.perFacet = perFacet;
     }
 
-    public String getGeoFacet() {
-        return geoFacet;
-    }
 
-    public void setGeoFacet(String geoFacet) {
-        this.geoFacet = geoFacet;
-    }
 
     public List<Media> getMedia() {
         return media;
@@ -267,9 +272,9 @@ public class Results implements Parcelable{
         dest.writeValue(id);
         dest.writeValue(assetId);
         dest.writeValue(views);
-        dest.writeList(desFacet);
-        dest.writeList(orgFacet);
-        dest.writeList(perFacet);
+        dest.writeValue(desFacet);
+        dest.writeValue(orgFacet);
+        dest.writeValue(perFacet);
         dest.writeValue(geoFacet);
         dest.writeList(media);
     }

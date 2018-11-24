@@ -29,6 +29,7 @@ public class Media implements Parcelable{
     @SerializedName("approved_for_syndication")
     @Expose
     private Integer approvedForSyndication;
+
     @SerializedName("media-metadata")
     @Expose
     private List<MediaMetaData> mediaMetadata = null;
