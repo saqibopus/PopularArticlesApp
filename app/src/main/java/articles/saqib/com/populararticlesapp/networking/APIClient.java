@@ -9,7 +9,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- *
+ * Created By : Saqib Shaikh
+ * Date : 24-11-2018
+ * Purpose / Usage : Api class to initialize api client.
+ * Additional Comments:
  */
 
 public class APIClient {

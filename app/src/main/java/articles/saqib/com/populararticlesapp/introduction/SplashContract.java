@@ -3,7 +3,10 @@ package articles.saqib.com.populararticlesapp.introduction;
 import android.content.Context;
 
 /**
- * Created by emxcel on 18/4/18.
+ * Created By : Saqib Shaikh
+ * Date : 24-11-2018
+ * Purpose / Usage : Splash Activity Contract Classes.
+ * Additional Comments:
  */
 
 public class SplashContract {

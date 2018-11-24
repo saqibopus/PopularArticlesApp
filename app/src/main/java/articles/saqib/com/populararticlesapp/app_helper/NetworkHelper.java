@@ -3,7 +3,12 @@ package articles.saqib.com.populararticlesapp.app_helper;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-
+/**
+ * Created By : Saqib Shaikh
+ * Date : 24-11-2018
+ * Purpose / Usage : Network operation help.
+ * Additional Comments:
+ */
 public class NetworkHelper {
     private static NetworkHelper networkHelper;
 

@@ -11,7 +11,12 @@ import articles.saqib.com.populararticlesapp.app_helper.Navigator;
 import articles.saqib.com.populararticlesapp.popular_article_module.ArticleActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+/**
+ * Created By : Saqib Shaikh
+ * Date : 24-11-2018
+ * Purpose / Usage : Splash activity to display introduction of application.
+ * Additional Comments:
+ */
 public class SplashActivity extends AppCompatActivity implements SplashContract.View{
     private SplashContract.Presenter presenter;
     @BindView(R.id.img_splash)

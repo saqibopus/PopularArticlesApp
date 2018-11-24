@@ -2,7 +2,12 @@ package articles.saqib.com.populararticlesapp.introduction;
 
 
 import android.os.Handler;
-
+/**
+ * Created By : Saqib Shaikh
+ * Date : 24-11-2018
+ * Purpose / Usage : Presenter class of Splash activity.
+ * Additional Comments:
+ */
 public class SplashPresenter implements SplashContract.Presenter {
     private SplashContract.View presenter;
 

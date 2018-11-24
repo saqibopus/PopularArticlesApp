@@ -6,7 +6,10 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 /**
- *
+ * Created By : Saqib Shaikh
+ * Date : 24-11-2018
+ * Purpose / Usage : This is Api interface which provide methods to fetch data from server using web servive.
+ * Additional Comments:
  */
 
 public interface APIInterface {

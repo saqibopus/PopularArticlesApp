@@ -8,7 +8,12 @@ import java.util.List;
 
 import articles.saqib.com.populararticlesapp.popular_article_module.model.Results;
 
-
+/**
+ * Created By : Saqib Shaikh
+ * Date : 24-11-2018
+ * Purpose / Usage : Contract of article Fragment.
+ * Additional Comments:
+ */
 public class PopularArticleContract {
     public interface View {
         void init();

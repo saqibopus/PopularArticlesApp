@@ -7,7 +7,12 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-
+/**
+ * Created By : Saqib Shaikh
+ * Date : 24-11-2018
+ * Purpose / Usage : Logs printing.
+ * Additional Comments:
+ */
 
 public class Logs {
 

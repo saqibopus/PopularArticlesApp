@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_splash"
+            android:title="@string/app_name" />
+
+    </group>
+    <group>
+        <item android:id="@+id/nav_item_search"
+            android:icon="@mipmap/ic_serach"
+            android:title="Search" />
+    </group>
+
+    <group android:id="@+id/group_menu">
+        <item android:id="@+id/nav_item_four"
+
+            android:title="Sports Article" />
+        <item android:id="@+id/nav_item_five"
+            android:title="General Article" />
+    </group>
+</menu>

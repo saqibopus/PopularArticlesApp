@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_margin="5dp"
     app:cardBackgroundColor="@color/colorWhite"
-    android:layout_height="150dp">
+    android:layout_height="120dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="match_parent">
 
 
     <android.support.constraint.Guideline
@@ -26,7 +26,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,6 +34,8 @@
             android:layout_marginEnd="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="#FF000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guide_block_one"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,13 +52,11 @@
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="lksaflfnaflnanfskjdnfsdnfnjdsfknjdsjfnhjdsnfdsnbfndsfkjndskjfndskjnfkjsdnfkjndsfkjndsfkjndskjfndskjnf;lkjnsf;kndsfk"
+            android:text=""
             app:layout_constraintBottom_toTopOf="@+id/guide_block_divide"
             app:layout_constraintEnd_toStartOf="@+id/guide_block_two"
             app:layout_constraintStart_toStartOf="@+id/guide_block_one"
@@ -69,7 +69,9 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="TextView"
+        android:text=""
+        android:maxLines="2"
+        android:ellipsize="end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guide_block_two"
         app:layout_constraintStart_toStartOf="@+id/guide_block_one"
@@ -81,7 +83,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:text="12-12-2017"
+        android:background="@color/colorWhite"
+        android:padding="2dp"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guide_block_two" />
 

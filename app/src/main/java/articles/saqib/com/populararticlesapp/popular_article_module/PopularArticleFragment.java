@@ -14,6 +14,7 @@ import java.util.List;
 
 import articles.saqib.com.populararticlesapp.R;
 import articles.saqib.com.populararticlesapp.app_helper.Logs;
+import articles.saqib.com.populararticlesapp.app_helper.ProgressHelper;
 import articles.saqib.com.populararticlesapp.popular_article_module.adapter.ArticleAdapter;
 import articles.saqib.com.populararticlesapp.popular_article_module.contract.PopularArticleContract;
 import articles.saqib.com.populararticlesapp.popular_article_module.model.Results;
@@ -22,9 +23,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link PopularArticleFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Created By : Saqib Shaikh
+ * Date : 24-11-2018
+ * Purpose / Usage : Popular Article is to be loaded call getInstance method of PopularArticleFragment fragment.
+ * Additional Comments:
  */
 public class PopularArticleFragment extends Fragment implements PopularArticleContract.View {
 
@@ -32,6 +34,7 @@ public class PopularArticleFragment extends Fragment implements PopularArticleCo
     @BindView(R.id.recycleViewArticle)
     RecyclerView recyclerViewArticle;
     private ArticleAdapter adapter = null;
+    private ProgressHelper progressHelper = null;
 
     public PopularArticleFragment() {
         // Required empty public constructor
@@ -65,15 +68,20 @@ public class PopularArticleFragment extends Fragment implements PopularArticleCo
         return v;
     }
 
-
+    /**
+     * This method is used to init views and presenter.
+     */
     @Override
     public void init() {
+        progressHelper = ProgressHelper.getInstance().initProgressDilog(getActivity());
         initRecycleView();
         presenter = new PopularArticlePresenter(this);
         presenter.requestPopularArticle("1e4a4f2a02664651b248899fa77f3407s");
 
     }
-
+    /**
+     * This method is used to init recycle view.
+     */
     private void initRecycleView() {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerViewArticle.setLayoutManager(mLayoutManager);
@@ -87,16 +95,26 @@ public class PopularArticleFragment extends Fragment implements PopularArticleCo
 
     @Override
     public void setProgress(boolean isShow) {
+        if (isShow) {
+            progressHelper.show("Loading");
+        } else {
+            progressHelper.dissmiss();
+        }
 
     }
 
+    /**
+     * This method is init the popular article adapter.
+     * It will call automatically by presenter.
+     */
     @Override
-    public void onPopularArticleLoad(boolean isSuccess, String message, List<Results> results) {
+    public void onPopularArticleLoad(boolean isSuccess, String
+            message, List<Results> results) {
         if (!isSuccess) {
             Logs.tFinal(getActivity(), message);
             return;
         }
-        Logs.p("Result Size : "+results.size());
+        Logs.p("Result Size : " + results.size());
         if (results != null && results.size() > 0) {
             adapter = new ArticleAdapter(getActivity(), results);
             recyclerViewArticle.setAdapter(adapter);
